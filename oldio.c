@@ -1,0 +1,42 @@
+#include "io.h"
+
+/*
+//    void outb(unsigned short port, unsigned char data);
+
+    /* The I/O ports 
+    #define FB_COMMAND_PORT         0x3D4
+    #define FB_DATA_PORT            0x3D5
+
+    /* The I/O port commands 
+    #define FB_HIGH_BYTE_COMMAND    14
+    #define FB_LOW_BYTE_COMMAND     15
+
+    /** fb_move_cursor:
+     *  Moves the cursor of the framebuffer to the given position
+     *
+     *  @param pos The new position of the cursor
+     
+    void fb_move_cursor(unsigned short pos)
+    {
+        outb(FB_COMMAND_PORT, FB_HIGH_BYTE_COMMAND);
+        outb(FB_DATA_PORT,    ((pos >> 8) & 0x00FF));
+        outb(FB_COMMAND_PORT, FB_LOW_BYTE_COMMAND);
+        outb(FB_DATA_PORT,    pos & 0x00FF);
+    }
+
+    int write(char *buf, unsigned int len);
+ /** serial_is_transmit_fifo_empty:
+     *  Checks whether the transmit FIFO queue is empty or not for the given COM
+     *  port.
+     *
+     *  @param  com The COM port
+     *  @return 0 if the transmit FIFO queue is not empty
+     *          1 if the transmit FIFO queue is empty
+     */
+//    int serial_is_transmit_fifo_empty(unsigned int com)
+//    {
+        /* 0x20 = 0010 0000 */
+//        return inb(SERIAL_LINE_STATUS_PORT(com)) & 0x20;
+//    }
+
+
