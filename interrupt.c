@@ -8,10 +8,8 @@
 #include "log.h"
 #include "constants.h"
 
-//interupt handler for part 6
-
 static interrupt_handler_t interrupt_handlers[IDT_NUM_ENTRIES];
-/*
+
 uint32_t register_interrupt_handler(uint32_t interrupt,
                                     interrupt_handler_t handler)
 {
@@ -28,7 +26,7 @@ uint32_t register_interrupt_handler(uint32_t interrupt,
     interrupt_handlers[interrupt] = handler;
     return 0;
 }
-*/
+
 void interrupt_handler(cpu_state_t state, idt_info_t info, stack_state_t exec)
 {
     if (interrupt_handlers[info.idt_index] != NULL) {

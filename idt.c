@@ -10,8 +10,6 @@
 #define IDT_TIMER_INTERRUPT_INDEX    0x20
 #define IDT_KEYBOARD_INTERRUPT_INDEX 0x21
 
-//for part 6 of little os
-
 #define CREATE_IDT_GATE(idx) \
     create_idt_gate(idx, (uint32_t) &interrupt_handler_##idx,\
                     IDT_TRAP_GATE_TYPE, PL0);
@@ -165,3 +163,4 @@ static void create_idt_gate(uint8_t n, uint32_t handler, uint8_t type,
         (0x01 << 1)          |
         type;
 }
+
